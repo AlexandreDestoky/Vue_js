@@ -7,13 +7,19 @@
   <title>vue js</title>
 </head>
 <body>
-  <div id="app"></div>
-  <script src="https://unpkg.com/vue@next"></script>
-  <script>
-    const APP = new Vue({
-      el: '#app'
-    });
-  </script>
-  <script src="script.js"></script>
+  <div id="app">
+    <h1>Vue JS test</h1>
+    <p>{{ txt }}</p>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          txt: "Hello World"
+        }
+      })
+    </script>
+  <!-- <script src="script.js"></script> -->
 </body>
 </html>

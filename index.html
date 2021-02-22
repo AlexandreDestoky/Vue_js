@@ -11,6 +11,7 @@
     <h1>Vue JS test</h1>
     <p>{{ txt }}</p>
     <p>{{ presentation() }}</p>
+    <p>{{ double(47)}}</p>
   </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
@@ -22,6 +23,9 @@
         methods: {
           presentation () {
             return "Salut";
+          },
+          double(nbr) {
+            return `Le double de ${nbr} est ${nbr*2} ! 😃`
           }
         }
 

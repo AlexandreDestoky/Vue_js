@@ -17,8 +17,9 @@
       <input type="text" v-on:keyup.enter="test" />
       <input type="text" v-model="valeur" />
       <p>{{valeur}}</p>
+      <p>{{valeur === "alexandre" ? "admin":"invite"}}</p>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
       new Vue({

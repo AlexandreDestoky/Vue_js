@@ -18,6 +18,8 @@
       <input type="text" v-model="valeur" />
       <p>{{valeur}}</p>
       <p>{{valeur === "alexandre" ? "admin":"invite"}}</p>
+      <p v-html="codeHTML">{{ codeHTML}}</p>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -27,6 +29,7 @@
         data: {
           compteur: 0,
           valeur: "",
+          codeHTML: "<h2> TEST HTML </h2>"
         },
         methods: {
           augmente() {

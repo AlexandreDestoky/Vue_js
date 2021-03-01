@@ -19,6 +19,7 @@
       <p>{{valeur}}</p>
       <p>{{valeur === "alexandre" ? "admin":"invite"}}</p>
       <p v-html="codeHTML">{{ codeHTML}}</p>
+      <p>{{compteur + 5}}</p>
 
     </div>
 
@@ -27,7 +28,7 @@
       new Vue({
         el: "#app",
         data: {
-          compteur: 0,
+          compteur: 1,
           valeur: "",
           codeHTML: "<h2> TEST HTML </h2>"
         },

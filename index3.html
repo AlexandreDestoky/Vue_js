@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VUE js</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Vue JS test n°{{nombre}}</h1>
+      <p>{{presentation()}}</p>
+      <a v-bind:href="monGithub">github</a>
+      <hr />
+      <button v-on:click="augmentation">Augmenter</button>
+      <button v-on:click="diminution">Diminuer</button>
+      <p>Compteur : {{compteur}}</p>
+      <hr />
+      <input type="text" v-model="adresse" />
+      <p>{{adresse}}</p>
+      <hr>
+      <div v-html="template">
+        {{template}}
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          moi: {
+            prenom: "Alexandre",
+            nom: "Destoky",
+            age: 24,
+          },
+          nombre: 3,
+          monGithub: "https://github.com/AlexandreDestoky",
+          compteur: 0,
+          adresse: "",
+          template: `
+            <ul>
+              <li>
+                <item1>Lorem, ipsum dolor.</item1>
+              </li>
+              <li>
+                <item2>Maxime, cumque perspiciatis!</item2>
+              </li>
+              <li>
+                <item3>Culpa, nostrum esse!</item3>
+              </li>
+              <li>
+                <item4>Facere, nihil eius!</item4>
+              </li>
+              <li>
+                <item5>Eligendi, natus perspiciatis.</item5>
+              </li>
+            </ul>`,
+        },
+        methods: {
+          presentation() {
+            return `${this.moi.prenom} ${this.moi.nom} à ${this.moi.age}ans`;
+          },
+          augmentation() {
+            this.compteur++;
+          },
+          diminution() {
+            if (this.compteur > 0) this.compteur--;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

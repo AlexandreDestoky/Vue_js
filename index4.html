@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VUE js</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="augm1">Augmenter nbr1</button>
+      <button v-on:click="dim1">Diminuer nbr1</button>
+      <p>{{nbr1}}</p>
+      <p>{{majorite}}</p>
+      <hr />
+      <button v-on:click="nbr2++">Augmenter nbr2</button>
+      <p>{{nbr2}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          nbr1: 0,
+          nbr2: 35,
+        },
+        methods: {
+          augm1() {
+            this.nbr1++;
+            console.log("augmente nbr1");
+          },
+          dim1() {
+            this.nbr1--;
+            console.log("diminue nbr1");
+          },
+        },
+        computed: {
+          majorite() {
+            console.log("lancée majorité:" + Date.now());
+            return this.nbr1 >= 18 ? "Majeur" : "Mineur";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

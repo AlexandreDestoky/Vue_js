@@ -20,6 +20,12 @@
       .fondVert {
         background-color: green;
       }
+      .fondMauve {
+        background-color: purple;
+      }
+      .transparent {
+        opacity: .4;
+      }
     </style>
   </head>
   <body>
@@ -35,6 +41,10 @@
 
       <button @click="toggleColor = !toggleColor">Toggle Vert</button>
       <div :class="objCSS"></div>
+      <hr>
+
+      <button @click="toggleColor = !toggleColor">Toggle Mauve</button>
+      <div :class="[objCSS2, toggleColor? 'transparent':'']"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -63,6 +73,12 @@
               fondVert: this.toggleColor,
             }
           },
+          objCSS2() {
+            return {
+              boite:true,
+              fondMauve : true
+            }
+          }
         },
       });
     </script>

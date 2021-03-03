@@ -25,6 +25,21 @@
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores quisquam, at quae quos odio optio reiciendis
         ex asperiores possimus deleniti itaque odit earum delectus eius ipsam? Veniam ad eum odit.
       </p>
+      <hr>
+      <p v-if="age<18 && age>=0">Vous n'êtes pas majeur</p>
+      <p v-else-if="age>18 && age <40">Vous êtes adulte</p>
+      <p v-else-if="age>=40">Vous êtes vieux</p>
+      <p v-else>Impossible</p>
+      <hr>
+      <template v-if="prenom==='Alexandre'">
+        <div>
+          <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+          </ul>
+        </div>
+      </template>
 
     </div>
 
@@ -34,7 +49,9 @@
       new Vue({
         el: "#app",
         data: {
-          rouge:true
+          rouge:true,
+          age: 80,
+          prenom:"Alexandre"
         },
         methods: {},
         computed: {},

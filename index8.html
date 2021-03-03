@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VUE js</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- APP -->
+    <div id="app">
+      <h1>V for</h1>
+      <p v-for="el in tabPrenoms">Bonjour {{el}}, comment vas-tu ?</p>
+      <hr />
+
+      <p v-for="(el,index) in tabFruits">🎪{{index + 1}} {{el}}</p>
+      <hr />
+
+      <p v-for="(el,x) of personne">{{el}} {{x}}</p>
+      <hr>
+
+      <ul>
+        <template v-for="obj in personnage">
+          <li v-for="(el,x) in obj">{{el}}</li>
+        </template>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      // VUE
+      new Vue({
+        el: "#app",
+        data: {
+          tabPrenoms: ["Jean", "Pierre", "Alexandre", "Kevin"],
+          tabFruits: ["Pomme", "Banane", "Fraise"],
+          personne: {
+            prenom: "Alexandre",
+            nom: "Destoky",
+            age: 24,
+          },
+          personnage: [
+            {
+              prenom:"gandalf",
+              age:144
+            },
+            {
+              prenom:"legolas",
+              age:400
+            }
+          ]
+        },
+        methods: {},
+        computed: {},
+      });
+    </script>
+  </body>
+</html>

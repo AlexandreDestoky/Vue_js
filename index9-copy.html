@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VUE js</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- APP -->
+    <div id="app">
+      <post v-for="post in posts" :key="post.id" :post="post"></post>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+
+      let posts = [
+        { id: 1, title: "Titre du post 1", text: "lorem ipsum 1..." },
+        { id: 2, title: "Titre du post 2", text: "lorem ipsum 2..." },
+        { id: 3, title: "Titre du post 3", text: "lorem ipsum 3..." },
+        { id: 4, title: "Titre du post 4", text: "lorem ipsum 4..." },
+      ];
+
+      Vue.component("post", {
+        props: [post], // Maintenant, on a récupéré le post
+        template: `
+          <article>
+            <h1>{{ post.title }}</h1>
+            <div>{{ post.text }}</div>
+          </article>
+        `,
+      });
+
+
+      const APP = new Vue({
+        el: "#app",
+        data: {
+          posts,
+        },
+      });
+    </script>
+  </body>
+</html>

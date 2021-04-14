@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices Supplémentaire en VUE JS</title>
+  </head>
+  <body>
+    <h1>Exercice VUE JS</h1>
+    <div id="app">
+      <p><a :href="github" target="_blank">Mon github</a></p>
+      <img :src="logo" alt="logo de vue JS" width="100" />
+      <hr />
+      <p>Compteur : {{cpt}}</p>
+      <button v-on:click="cpt++">+ cpt</button>
+      <button v-on:click="cpt--">- cpt</button>
+      <hr />
+      <p>Compteur : {{cpt2}}</p>
+      <button @click="augmente">+ cpt</button>
+      <button @click="diminue">- cpt</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          github: "https://github.com/AlexandreDestoky",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+          cpt: 0,
+          cpt2: 0,
+        },
+        methods: {
+          augmente() {
+            this.cpt2++;
+          },
+          diminue() {
+            if (this.cpt2 > 0) this.cpt2--;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

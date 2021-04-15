@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices Supplémentaire en VUE JS</title>
+  </head>
+  <body>
+    <h1>Exercice VUE JS</h1>
+    <div id="app">
+      <input type="text" v-model="prenom">
+      <p>{{prenom}}</p>
+        <hr>
+      <input type="number" v-model="age">
+      <p>{{age}}</p>
+        <hr>
+      <select v-model="choix">
+        <option value="1">un</option>
+        <option value="2">deux</option>
+        <option value="3">trois</option>
+        <option value="4">quatre</option>
+      </select>
+      <p>{{choix}}</p>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          prenom : "",
+          age: undefined,
+          choix:3
+        },
+        methods: {
+
+        },
+      });
+    </script>
+  </body>
+</html>

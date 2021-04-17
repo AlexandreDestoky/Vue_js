@@ -10,20 +10,41 @@
     <h1>Exercice VUE JS</h1>
     <div id="app">
       <p v-for="prenom of prenoms">{{prenom === "Thomas"? "Casse toi":"Bonjour"}} {{prenom}}</p>
+      <hr />
+      <p v-for="(prenom,index) of prenoms">N°{{index}}) {{prenom}}</p>
+      <hr>
 
-
+      <template v-for="animal of animaux">
+        <p v-for="(caract,prop) of animal">{{prop}} : {{caract}}</p>
+        <hr>
+      </template>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
         data: {
-          prenoms : ["Jean","Pierre","Thomas","Luc"]
+          prenoms: ["Jean", "Pierre", "Thomas", "Luc"],
+          animaux: [
+            {
+              type: "chat",
+              age: "3ans",
+              poids: "5kg",
+            },
+            {
+              type: "chien",
+              age: "8ans",
+              poids: "15kg",
+            },
+            {
+              type: "poisson rouge",
+              age: "1mois",
+              poids: "100g",
+            },
+          ],
         },
-        methods: {
-
-        },
+        methods: {},
       });
     </script>
   </body>

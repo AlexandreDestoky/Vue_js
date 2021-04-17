@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices Supplémentaire en VUE JS</title>
+  </head>
+  <body>
+    <h1>Exercice VUE JS</h1>
+    <div id="app">
+      <p>Valeur du compteur N°1 : {{cpt1}}</p>
+      <button @click="augmentation1">Augmenter</button>
+      <button @click="diminution1">Diminuer</button>
+      <p>{{checkCpt1}}</p>
+      <hr>
+      <p>Valeur du compteur N°2 : {{cpt2}}</p>
+      <button @click="augmentation2">Augmenter</button>
+      <button @click="diminution2">Diminuer</button>
+
+
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          cpt1:0,
+          cpt2:0
+
+        },
+        methods: {
+          augmentation1() {
+            this.cpt1++;
+            console.log("augm cpt1");
+          },
+          diminution1() {
+            this.cpt1--;
+            console.log("dim cpt1");
+          },
+          augmentation2() {
+            this.cpt2++;
+            console.log("augm cpt2");
+          },
+          diminution2() {
+            this.cpt2--;
+            console.log("dim cpt2");
+          },
+        },
+        computed: {
+          checkCpt1() {
+            console.log("check du cpt 1");
+            return (this.cpt1 > 3) ? "plus que 3":"3 ou moins"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

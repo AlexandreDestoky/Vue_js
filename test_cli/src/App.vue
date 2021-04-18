@@ -4,6 +4,7 @@
     <BtnEasy txt="C'est easy"/>
     <HelloWorld msg="C'est pas si compliqué en fait !"/>
     <BtnEasy txt="Réserver ici !"/>
+    <BtnEasy :txt="texteBouton"/>
 
 
   </div>
@@ -15,6 +16,11 @@ import BtnEasy from "./components/BtnEasy.vue"
 
 export default {
   name: 'App',
+  data() {
+    return {
+      texteBouton:"Réservation"
+    }
+  },
   components: {
     HelloWorld,
     BtnEasy

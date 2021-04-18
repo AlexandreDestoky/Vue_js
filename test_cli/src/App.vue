@@ -1,17 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BtnEasy txt="C'est easy"/>
+    <HelloWorld msg="C'est pas si compliqué en fait !"/>
+    <BtnEasy txt="Réserver ici !"/>
+
+
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import BtnEasy from "./components/BtnEasy.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    BtnEasy
   }
 }
 </script>

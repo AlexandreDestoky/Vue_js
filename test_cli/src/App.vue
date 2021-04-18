@@ -1,31 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <BtnEasy txt="C'est easy"/>
-    <HelloWorld msg="C'est pas si compliqué en fait !"/>
-    <BtnEasy txt="Réserver ici !"/>
-    <BtnEasy :txt="texteBouton"/>
 
-
+    <BtnEasy :txt="action[0]" :article="lasagne" />
+    <hr>
+    <BtnEasy :txt="action[2]" :article="pizza"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import BtnEasy from "./components/BtnEasy.vue"
+import BtnEasy from "./components/BtnEasy.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
-      texteBouton:"Réservation"
-    }
+      action: ["Réservation", "Commande", "Annulation"],
+      lasagne:"Les lasagnes sont des pâtes alimentaires en forme de larges plaques. Il s'agit également de la préparation utilisant ces mêmes pâtes et généralement faite de couches alternées de pâtes, de fromage et d'une sauce tomate avec de la viande, bien qu'il en existe au poisson, notamment au saumon, et végétariennes.",
+      pizza:"J'adore les pizza !"
+    };
   },
   components: {
-    HelloWorld,
-    BtnEasy
-  }
-}
+    BtnEasy,
+  },
+};
 </script>
 
 <style>

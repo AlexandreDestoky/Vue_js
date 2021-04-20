@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <p>salut</p> -->
-    <Card :tabFilm="films"/>
-    <Card :tabFilm="films"/>
+    <p>{{recherche}}</p>
+    <Card :tabFilm="films" @changementdeTitre="changementTitre($event)"/>
   </div>
 </template>
 
@@ -19,7 +19,13 @@ export default {
         { titre: "Avatar", date: 2012 },
         { titre: "Indiana Jones", date: 1988 },
       ],
+      recherche : "Pas encore de recherche"
     };
+  },
+  methods: {
+    changementTitre(nouveauTitre) {
+      this.recherche = nouveauTitre;
+    }
   },
   components: {
     Card

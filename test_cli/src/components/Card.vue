@@ -5,6 +5,7 @@
     <p>{{film.date}}</p>
   </div>
   <button @click="deleteLastMovie">Supprimer le dernier film</button>
+  <button @click="changeTitre">Modifier le titre</button>
 </div>
 </template>
 
@@ -16,6 +17,9 @@ export default {
   methods: {
     deleteLastMovie() {
       this.tabFilm.pop();
+    },
+    changeTitre() {
+      this.$emit("changementdeTitre","Titre changé");
     }
   },
 }

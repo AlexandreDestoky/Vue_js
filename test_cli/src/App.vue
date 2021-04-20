@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <p>salut</p> -->
     <p>{{recherche}}</p>
-    <Card :tabFilm="films" @changementdeTitre="changementTitre($event)"/>
+    <!-- <Card :tabFilm="films" @changementdeTitre="changementTitre($event)"/> -->
+    <Card :tabFilm="films" @setRecherche="changementTitre($event)"/>
   </div>
 </template>
 

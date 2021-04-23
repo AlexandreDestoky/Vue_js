@@ -36,5 +36,6 @@ export default {
 <style>
 #app {
   background: bisque;
+  color:blue;
 }
 </style>

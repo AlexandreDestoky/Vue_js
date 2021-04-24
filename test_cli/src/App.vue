@@ -38,4 +38,8 @@ export default {
   background: bisque;
   color:blue;
 }
+
+h2 {
+  font-size: 1.3em;
+}
 </style>

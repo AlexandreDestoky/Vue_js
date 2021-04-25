@@ -41,5 +41,6 @@ export default {
 
 h2 {
   font-size: 1.3em;
+  text-decoration: underline;
 }
 </style>
